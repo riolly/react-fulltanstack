@@ -8,6 +8,11 @@ A minimal starter template for 🏝️ TanStack Start. [→ Preview here](https:
 - [Drizzle ORM](https://orm.drizzle.team/) + PostgreSQL
 - [Better Auth](https://www.better-auth.com/)
 
+> [!IMPORTANT]
+> We're using the alpha branch of TanStack Start for the upcoming Devinxi changes. Start & Router versions are currently pinned to `"alpha"` in package.json.
+>
+> https://github.com/TanStack/router/discussions/2863#discussioncomment-13104960
+
 ## Getting Started
 
 1. [Use this template](https://github.com/new?template_name=react-tanstarter&template_owner=dotnize) or clone this repository.
@@ -39,7 +44,7 @@ A minimal starter template for 🏝️ TanStack Start. [→ Preview here](https:
 ## Issue watchlist
 
 - [React Compiler docs](https://react.dev/learn/react-compiler), [Working Group](https://github.com/reactwg/react-compiler/discussions) - React Compiler is still in beta. You can disable it in [app.config.ts](./app.config.ts#L15) if you prefer.
-- https://github.com/TanStack/router/discussions/2863 - TanStack Start is in beta and may still undergo major changes.
+- https://github.com/TanStack/router/discussions/2863 - TanStack Start may still undergo breaking changes.
 
 ## Goodies
 
@@ -47,7 +52,7 @@ A minimal starter template for 🏝️ TanStack Start. [→ Preview here](https:
 
 These scripts in [package.json](./package.json#L5) use **pnpm** by default, but you can modify them to use your preferred package manager.
 
-- **`auth:generate`** - Regenerate the [auth db schema](./src/lib/server/schema/auth.schema.ts) if you've made changes to your Better Auth [config](./src/lib/server/auth.ts).
+- **`auth:generate`** - Regenerate the [auth db schema](./src/lib/db/schema/auth.schema.ts) if you've made changes to your Better Auth [config](./src/lib/auth/index.ts).
 - **`db`** - Run drizzle-kit commands. (e.g. `pnpm db generate` to generate a migration)
 - **`ui`** - The shadcn/ui CLI. (e.g. `pnpm ui add button` to add the button component)
 - **`format`** and **`lint`** - Run Prettier and ESLint.
@@ -55,7 +60,7 @@ These scripts in [package.json](./package.json#L5) use **pnpm** by default, but 
 
 #### Utilities
 
-- [`auth-guard.ts`](./src/lib/middleware/auth-guard.ts) - Sample middleware for forcing authentication on server functions. ([see #5](https://github.com/dotnize/react-tanstarter/issues/5))
+- [`auth-guard.ts`](./src/lib/auth/middleware/auth-guard.ts) - Sample middleware for forcing authentication on server functions. (see [#5](https://github.com/dotnize/react-tanstarter/issues/5#issuecomment-2615905686) and [#17](https://github.com/dotnize/react-tanstarter/issues/17#issuecomment-2853482062))
 - [`ThemeToggle.tsx`](./src/components/ThemeToggle.tsx) - A simple component to toggle between light and dark mode. ([#7](https://github.com/dotnize/react-tanstarter/issues/7))
 
 ## Building for production

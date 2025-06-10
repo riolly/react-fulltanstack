@@ -2,14 +2,15 @@ import type { Config } from "drizzle-kit";
 
 export default {
   out: "./drizzle",
-  schema: ["./src/lib/server/schema/user.schema.ts"],
+  schema: [
+    "./src/lib/db/schema/auth.schema.ts",
+  ],
   breakpoints: true,
   verbose: true,
   strict: true,
   dialect: "postgresql",
   casing: "snake_case",
   dbCredentials: {
-    // cannot use env.ts
-    url: process.env.DATABASE_URL as string,
+    url: process.env.DATABASE_URL as string, // cannot use env.ts here
   },
 } satisfies Config;

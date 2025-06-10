@@ -54,7 +54,7 @@ const processEnv = {
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
 };
 
-const merged = server.extend(client);
+const merged = server.merge(client);
 type MergedEnv = z.infer<typeof merged>;
 
 let env: MergedEnv;
@@ -66,7 +66,7 @@ if (!!process.env.SKIP_ENV_VALIDATION == false) {
     : client.safeParse(import.meta.env);
 
   if (parsed.success === false) {
-    console.error(z.prettifyError(parsed.error));
+    console.error(parsed.error.message);
     throw new Error("Invalid environment variables");
   }
 

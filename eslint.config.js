@@ -7,7 +7,17 @@ import * as reactHooks from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config({
-  ignores: ["dist", ".vinxi", ".wrangler", ".vercel", ".netlify", ".output", "build/"],
+  ignores: [
+    "dist",
+    ".wrangler",
+    ".vercel",
+    ".netlify",
+    ".output",
+    "build/",
+    ".tanstack-start",
+    ".tsr-temp",
+    ".nitro",
+  ],
   files: ["**/*.{ts,tsx}"],
   languageOptions: {
     parser: tseslint.parser,

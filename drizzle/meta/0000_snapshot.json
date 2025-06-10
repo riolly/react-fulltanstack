@@ -1,12 +1,12 @@
 {
-  "id": "fc15b028-8a50-4295-8173-3d7d7fc419d4",
+  "id": "5e5f632d-738c-4566-b4c4-61edb6dfd64c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "user.account": {
+    "public.account": {
       "name": "account",
-      "schema": "user",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
@@ -93,7 +93,6 @@
           "name": "account_user_id_user_id_fk",
           "tableFrom": "account",
           "tableTo": "user",
-          "schemaTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -110,9 +109,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "user.session": {
+    "public.session": {
       "name": "session",
-      "schema": "user",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
@@ -169,7 +168,6 @@
           "name": "session_user_id_user_id_fk",
           "tableFrom": "session",
           "tableTo": "user",
-          "schemaTo": "user",
           "columnsFrom": [
             "user_id"
           ],
@@ -194,9 +192,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "user.user": {
+    "public.user": {
       "name": "user",
-      "schema": "user",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
@@ -257,9 +255,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "user.verification": {
+    "public.verification": {
       "name": "verification",
-      "schema": "user",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
@@ -308,9 +306,7 @@
     }
   },
   "enums": {},
-  "schemas": {
-    "user": "user"
-  },
+  "schemas": {},
   "sequences": {},
   "roles": {},
   "policies": {},
